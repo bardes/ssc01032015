@@ -1,0 +1,39 @@
+<project name="T1" basedir="." default="main">
+    <property name="src.dir"     value="src"/>
+    <property name="res.dir"     value="res"/>
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="${build.dir}/jar"/>
+
+    <property name="main-class"  value="br.usp.icmc.ssc01032015.Simulation"/>
+    <property name="author.name" value="Paulo Bardes"/>
+
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac includeantruntime="false" srcdir="${src.dir}" destdir="${classes.dir}"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+                <attribute name="Author" value="${author.name}"/>
+            </manifest>
+            <fileset dir="${res.dir}"/>
+            <fileset dir="${classes.dir}"/>
+            <fileset dir="${src.dir}" includes="**/*.java"/>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+    </target>
+
+	<target name="main" depends="compile"/>
+</project>
