@@ -1,12 +1,12 @@
 #TTToTCP - Tic Tac Toe over TCP
-TODO
+Por enquanto apenas o cliente está funcionando. O protocolo pode ser testado conectando um cliente à um telnet ou netcat e manualmente interagindo com ele.
 
 ##Compilação:
-TODO
+`ant jar` gera o .jar dentro de `build/jar/`
 
 ##Execução:
-1. Para iniciar o servidor: `ant run --server <porta>`
-2. Para iniciar os clientes: `ant run <host> <porta>`
+1. Para iniciar o servidor: `java -jar build/jar/T2.jar --server 1234`
+2. Para iniciar os clientes: `java -jar build/jar/T2.jar `
 
 ##Protocolo:
 Como o jogo só é de fato executado no servidor, os clientes atuam como terminais burros enviando uma jogada de cada vez para serem avaliadas, e recebendo de volta ou um indicador de erro ou um eco da jogada como confirmação.

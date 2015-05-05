@@ -26,6 +26,7 @@
             <fileset dir="${res.dir}"/>
             <fileset dir="${classes.dir}"/>
             <fileset dir="${src.dir}" includes="**/*.java"/>
+            <fileset file="README.md"/>
         </jar>
     </target>
 
