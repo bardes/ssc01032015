@@ -1,13 +1,18 @@
-package TTT
+package TTT;
 
-import java.net.*
+import java.net.*;
 
 public class TTTServer {
-    private Socket clientListner;
+    private Socket clientListener;
 
     public TTTServer(int port) {
     }
 
+    private void waitPlayers() {
+
+    }
+
     public void run() {
+
     }
 }

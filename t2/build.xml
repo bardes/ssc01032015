@@ -1,4 +1,4 @@
-<project name="T1" basedir="." default="main">
+<project name="T2" basedir="." default="main">
     <property name="src.dir"     value="src"/>
     <property name="res.dir"     value="res"/>
     <property name="build.dir"   value="build"/>

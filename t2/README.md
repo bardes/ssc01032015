@@ -20,7 +20,7 @@ Usado para iniciar a conexão. Não possui nnenhum argumento.
 
 **Respostas esperadas:**
 * `HELLO (X|O)`: Quando conectado corretamente.
-* `DISCONNECT <errno> [msg ...]`: Quando não pode acitar a conexão.
+* `DISCONNECT <err_id> [msg ...]`: Quando não pode acitar a conexão.
 
 ###Bye:
 **Sintaxe:** `BYE [msg ...]`.
@@ -58,7 +58,7 @@ Usado pelo servidor para indicar que a conexão será fechada.
 Comando enviado pelo servidor para indicar que o jogo acabou. Possuí apenas um argumento indicando se o jogador que recebeu a mensagem ganhou (WIN), perdeu (LOSE) ou se foi um empate (DRAW).
 
 ###Invalid:
-**Sintaxe:** `INVALID <errno> [msg ...]`
+**Sintaxe:** `INVALID <err_id> [msg ...]`
 
 Resposta padrão do servidor em caso de comandos malformados ou recebidos em contextos errados.
 
@@ -72,7 +72,7 @@ Resposta padrão do servidor em caso de comandos malformados ou recebidos em con
 * `[arg ...]` Argumento opcional. Se permitido será sempre o último argumento, podendo conter espaços. Só é delimitado pela quebra de linha no final do comando.
 * `(opt1|opt2|...|optn)` Argumento obrigatório e tem que ser (apenas) uma das opções dadas.
 
-*Nota: Todos os comandos devem ser terminados com uma quebra de linha ('\n')*
+**Nota:** *Todos os comandos devem ser terminados com uma quebra de linha ('\n')*
 
 ## Exemplos:
 Linhas começando com `>` são enviadas do cliente para o servidor, linhas começando com `<` são enviadas do servidor para o cliente, e qualquer coisa precedia por `//` é um comentário.
